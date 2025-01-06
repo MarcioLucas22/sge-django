@@ -6,6 +6,7 @@ class BrandListView(ListView):
     model = models.Brand
     template_name = 'brand_list.html'
     context_object_name = 'brands'
+    paginate_by = 10 # Define a quantidade de elementos que serão exibidos por página
 
     def get_queryset(self): # Método que faz filtros pelo nome da marca
         queryset = super().get_queryset()
