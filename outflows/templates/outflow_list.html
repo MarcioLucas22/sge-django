@@ -31,7 +31,7 @@ SGE - Saídas
                     <th>ID</th>
                     <th>Produto</th>
                     <th>Quantidade</th>
-                    <th>Descrição</th>
+                    <th>Data de saída</th>
                     <th>Ações</th>
                 </tr>
             </thead>
@@ -41,7 +41,7 @@ SGE - Saídas
                         <td>{{ outflow.id }}</td>
                         <td>{{ outflow.product }}</td>
                         <td>{{ outflow.quantity }}</td>
-                        <td>{{ outflow.description }}</td>
+                        <td>{{ outflow.created_at }}</td>
                         <td>
                             <a href="{% url 'outflow_detail' outflow.id %}" class="btn btn-info btn-sm">
                                 <i class="bi bi-eye"></i>

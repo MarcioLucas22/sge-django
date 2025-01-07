@@ -10,7 +10,7 @@ SGE - Produtos
         <div class="col-md-6">
             <form method="get" action="{%  url 'product_list' %}">
                 <div class="input-group">
-                    <input type="text" name="name" class="form-control" placeholder="Nome do produto" value="{{ request.GET.name }}">
+                    <input type="text" name="title" class="form-control" placeholder="Título do produto" value="{{ request.GET.title }}">
                     <button type="submit" class="btn btn-primary">
                         <i class="bi bi-search"></i>
                     </button>
@@ -32,7 +32,6 @@ SGE - Produtos
                     <th>Título</th>
                     <th>Categoria</th>
                     <th>Marca</th>
-                    <th>Descrição</th>
                     <th>Preço de custo</th>
                     <th>Preço de venda</th>
                     <th>Quantidade</th>
@@ -44,7 +43,6 @@ SGE - Produtos
                         <td>{{ product.id }}</td>
                         <td>{{ product.category }}</td>
                         <td>{{ product.brand }}</td>
-                        <td>{{ product.description }}</td>
                         <td>{{ product.serie_number }}</td>
                         <td>{{ product.cost_price }}</td>
                         <td>{{ product.selling_price }}</td>

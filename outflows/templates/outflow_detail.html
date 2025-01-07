@@ -8,6 +8,7 @@
     <div class="card">
         <div class="card-body">
             <h3 class="card-title">{{ object.product }}</h3> <!-- Esse "object" é genérico, mas como estou passando uma brand no contexto o django já entende -->
+            <p class="card-text">Quantidade: {{ object.quantity }}</p>
             <p class="card-text">{{ object.description }}</p>            
         </div>
     </div>

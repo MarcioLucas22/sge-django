@@ -12,9 +12,8 @@ class ProductForm(forms.ModelForm):
             'brand': forms.Select(attrs={'class': 'form-control'}),
             'description': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
             'serie_number': forms.TextInput(attrs={'class': 'form-control'}),
-            'cost_price': forms.TextInput(attrs={'class': 'form-control'}),
-            'selling_price': forms.TextInput(attrs={'class': 'form-control'}),
-            'quantity': forms.TextInput(attrs={'class': 'form-control'}),
+            'cost_price': forms.NumberInput(attrs={'class': 'form-control'}),
+            'selling_price': forms.NumberInput(attrs={'class': 'form-control'}),
         } # Estilização do formulário
         labels = {
             'title': 'Título',
@@ -24,5 +23,4 @@ class ProductForm(forms.ModelForm):
             'serie_number': 'Número de Série',
             'cost_price': 'Preço de Custo',
             'selling_price': 'Preço de Venda',
-            'quantity': 'Quantidade',
         } # Alterando o label para ficar em português
