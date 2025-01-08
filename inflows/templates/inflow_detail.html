@@ -10,7 +10,7 @@
             <h3 class="card-title">{{ object.product }}</h3> <!-- Esse "object" é genérico, mas como estou passando uma brand no contexto o django já entende -->
             <p class="card-text">Fornecedor: {{ object.supplier }}</p>            
             <p class="card-text">Quantidade: {{ object.quantity }}</p>            
-            <p class="card-text">{{ object.description }}</p>            
+            <p class="card-text">Descrição: {{ object.description }}</p>            
         </div>
     </div>
     <a href="{% url 'inflow_list' %}" class="btn btn-secondary mt-3">Cancelar e voltar para a lista de entradas</a>
