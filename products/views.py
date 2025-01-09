@@ -4,8 +4,9 @@ from django.urls import reverse_lazy
 from categories.models import Category
 from brands.models import Brand
 import app.metrics as metrics
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-class ProductListView(ListView):
+class ProductListView(LoginRequiredMixin, ListView):
     model = models.Products
     template_name = 'product_list.html'
     context_object_name = 'products' # Contexto enviado para o template
@@ -41,26 +42,26 @@ class ProductListView(ListView):
         return context
     
 
-class ProductCreateView(CreateView):
+class ProductCreateView(LoginRequiredMixin, CreateView):
     model = models.Products
     template_name = 'product_create.html'
     form_class = forms.ProductForm
     success_url = reverse_lazy('product_list') # Em caso de sucesso, redireciona para a página de listagem
 
 
-class ProductDetailView(DetailView):
+class ProductDetailView(LoginRequiredMixin, DetailView):
     model = models.Products
     template_name = 'product_detail.html'    
     
     
-class ProductUpdateView(UpdateView):
+class ProductUpdateView(LoginRequiredMixin, UpdateView):
     model = models.Products
     template_name = 'product_update.html'   
     form_class = forms.ProductForm 
     success_url = reverse_lazy('product_list')
     
 
-class ProductDeleteView(DeleteView):
+class ProductDeleteView(LoginRequiredMixin, DeleteView):
     model = models.Products
     template_name = 'product_delete.html'
     success_url = reverse_lazy('product_list')
