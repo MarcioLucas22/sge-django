@@ -5,7 +5,7 @@ from . import models
 admin.site.site_title = "Controle de Estoque Admin"
 
 # Altere o cabeçalho do painel de administração
-admin.site.site_header = "Controle de Estoque - SGE"
+admin.site.site_header = "SGE"
 
 # Altere o texto da página inicial do painel administrativo
 admin.site.index_title = "Bem-vindo ao Painel Administrativo"
