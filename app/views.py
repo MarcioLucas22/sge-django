@@ -1,7 +1,7 @@
 import json
 from django.shortcuts import render
 from . import metrics
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
 
 @login_required(login_url='login')
 def home(request):

@@ -8,7 +8,7 @@
   
       <div class="card">
           <div class="card-body">
-              <form action="{% url 'product_update' product.id%}" method="post" class="form">
+              <form action="{% url 'product_update' object.id%}" method="post" class="form">
                   {% csrf_token %}
                   {{ form.as_p }} <!-- Exibe os campos do formulário -->
                   <button type="submit" class="btn btn-primary">Editar</button>
