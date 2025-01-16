@@ -8,18 +8,18 @@ SGE - Fornecedores
     <h3 class="display-6">Fornecedores</h3>
     <div class="row mb-3">
         <div class="col-md-6">
-            <form method="get" action="{%  url 'supplier_list' %}">
+            <form method="get" action="{% url 'supplier_list' %}">
                 <div class="input-group">
                     <input type="text" name="name" class="form-control" placeholder="Nome do fornecedor" value="{{ request.GET.name }}">
                     <button type="submit" class="btn btn-primary">
                         <i class="bi bi-search"></i>
                     </button>
                 </div>
-            </form>
+            </form>                    
         </div>
         {% if perms.suppliers.add_supplier %}
         <div class="col-md-6">
-            <a href="{% url 'supplier_create' %}" class="btn btn-success float-end">
+            <a href="{% url 'supplier_create' %}" class="btn btn-success float-end btn-custom">
                 <i class="bi bi-plus"></i> Cadastrar fornecedor
             </a>
         </div>
@@ -44,17 +44,17 @@ SGE - Fornecedores
                         <td>{{ supplier.description }}</td>
                         <td>
                             {% if perms.suppliers.view_supplier %}
-                            <a href="{% url 'supplier_detail' supplier.id %}" class="btn btn-info btn-sm">
+                            <a href="{% url 'supplier_detail' supplier.id %}" class="btn btn-info btn-sm action">
                                 <i class="bi bi-eye"></i>
                             </a>
                             {% endif %}
                             {% if perms.suppliers.change_supplier %}
-                            <a href="{% url 'supplier_update' supplier.id %}" class="btn btn-warning btn-sm">
+                            <a href="{% url 'supplier_update' supplier.id %}" class="btn btn-warning btn-sm action">
                                 <i class="bi bi-pen"></i>
                             </a>
                             {% endif %}
                             {% if perms.suppliers.delete_supplier %}
-                            <a href="{% url 'supplier_delete' supplier.id %}" class="btn btn-danger btn-sm">
+                            <a href="{% url 'supplier_delete' supplier.id %}" class="btn btn-danger btn-sm action">
                                 <i class="bi bi-trash"></i>
                             </a>
                             {% endif %}
