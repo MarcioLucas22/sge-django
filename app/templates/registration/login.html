@@ -28,7 +28,7 @@
                         <div class="card p-4">
                               <div class="card-body">
                                     <h4 class="card-title text-center mb-4 text-primary">Login</h4>
-                                    <form method="post">
+                                    <form method="post" action="{% url 'login' %}">
                                           {% csrf_token %}
                                           <div class="mb-3">
                                                 <label for="username" class="form-label">Usuário</label>
@@ -43,19 +43,10 @@
                                           <div class="d-grid gap-2">
                                                 <button type="submit" class="btn btn-primary btn-lg">Entrar</button>
                                           </div>
-                                    </form>
-                                    {% if form.errors %}
-                                    <div class="alert alert-danger mt-4">
-                                          <ul class="mb-0">
-                                                {% for field in form %}
-                                                {% for error in field.errors %}
-                                                <li>{{ error }}</li>
-                                                {% endfor %}
-                                                {% endfor %}
-                                                {% for error in form.non_field_errors %}
-                                                <li>{{ error }}</li>
-                                                {% endfor %}
-                                          </ul>
+                                    </form>                                    
+                                    {% if error %}
+                                    <div class="alert alert-danger mt-3">
+                                        <i class="bi bi-exclamation-circle me-2"></i>{{ error }}
                                     </div>
                                     {% endif %}
                               </div>
@@ -63,11 +54,13 @@
                   </div>
             </div>
       </div>
+
       <footer class="bg-dark text-white py-3 text-center mt-auto">
             <div class="container">
-                <span>© 2025 SGE</span>
+                  <span>© 2025 SGE</span>
             </div>
-        </footer>
+      </footer>
 </body>
+
 
 </html>
