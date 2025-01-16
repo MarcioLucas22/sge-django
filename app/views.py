@@ -36,8 +36,8 @@ def custom_login(request):
         if user is not None:
             login(request, user)
             if user.is_superuser:
-                return redirect('choose_destination')  # Página de escolha para superusuários
-            return redirect('home')  # Página do sistema para usuários comuns
+                return redirect('choose_destination')
+            return redirect('home')
         else:
             return render(request, 'registration/login.html', {'error': 'Usuário ou senha inválidos'})
       
@@ -47,6 +47,6 @@ def custom_login(request):
 @login_required(login_url='login')
 def choose_destination(request):
     if not request.user.is_superuser:
-        return redirect('home')  # Redireciona usuários comuns para a página principal
+        return redirect('home')
     return render(request, 'choose_destination.html')
 
