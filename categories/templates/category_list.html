@@ -44,17 +44,17 @@ SGE - Categorias
                         <td>{{ category.description }}</td>
                         <td>
                             {% if perms.categories.view_category %}
-                            <a href="{% url 'category_detail' category.id %}" class="btn btn-info btn-sm">
+                            <a href="{% url 'category_detail' category.id %}" class="btn btn-info btn-sm action">
                                 <i class="bi bi-eye"></i>
                             </a>
                             {% endif %}
                             {% if perms.categories.change_category %}
-                            <a href="{% url 'category_update' category.id %}" class="btn btn-warning btn-sm">
+                            <a href="{% url 'category_update' category.id %}" class="btn btn-warning btn-sm action">
                                 <i class="bi bi-pen"></i>
                             </a>
                             {% endif %}
                             {% if perms.categories.delete_category %}
-                            <a href="{% url 'category_delete' category.id %}" class="btn btn-danger btn-sm">
+                            <a href="{% url 'category_delete' category.id %}" class="btn btn-danger btn-sm action">
                                 <i class="bi bi-trash"></i>
                             </a>
                             {% endif %}
